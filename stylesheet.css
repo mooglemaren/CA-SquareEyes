@@ -1,0 +1,79 @@
+body {
+  height: 100%;
+  font-family: "Oswald", sans-serif;
+}
+
+.header {
+  background-color: rgb(202, 153, 212);
+  color: rgb(192, 91, 77);
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  display: inline;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#form {
+  justify-content: center;
+}
+
+.mainpart {
+  background-image: url(./images/billy-aboulkheir-7d94sU14YXA-unsplash.jpg);
+  border-radius: 7px;
+  position: relative;
+  width: 80vw;
+  height: 60vh;
+  margin: 5% auto;
+  background-size: cover;
+}
+
+.mainpart .button {
+  position: absolute;
+  bottom: 3em;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ada7c9d5;
+}
+
+.button {
+  padding: 2em 4em;
+  background-color: #ada7c9;
+  text-decoration: none;
+  color: #0f7173;
+  border: solid 3px #0f7173;
+  border-radius: 7px;
+}
+
+.moviez {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+figure {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+  justify-content: space-evenly;
+  border-radius: 7px;
+  
+}
+
+img {
+  width: 16em;
+  height: 25em;
+  object-fit: cover;
+  border-radius: 7px 7px 0 0;
+}
+figcaption {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+footer {
+  background-color: blue;
+}
