@@ -4,12 +4,13 @@ body {
 }
 
 .header {
-  background-color: rgb(202, 153, 212);
+  background-color: #ada7c9;
   color: rgb(192, 91, 77);
   background-size: cover;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 li {
@@ -56,7 +57,8 @@ li {
 }
 
 figure {
-  background-color: white;
+  background-color: #0f7173;
+  color: #ada7c9;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
   justify-content: space-evenly;
   border-radius: 7px;
@@ -72,8 +74,11 @@ img {
 figcaption {
   text-align: center;
   padding: 10px 20px;
-}
+  }
 
 footer {
-  background-color: blue;
+  background-color: #ada7c9;
+  height: 100px;
+  width: auto;
+  text-align: center;
 }
