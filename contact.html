@@ -1,56 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Roboto&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="stylesheet.css" />
-</head>
-<body>
-    
+    <script
+      src="https://kit.fontawesome.com/9e698d9234.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <header class="header">
-
-        <nav>
-            <ul>
-                <li><a href="movies.html">Movies</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html">Log in</a></li>
-                <li><a href="cart.html">Your cart</a></li>
-            </ul>
-        </nav>
-    
+      <a href="index.html">
+        <img
+          src="images/logo square.png"
+          id="logo"
+          alt="sick nasty logo goddamn"
+        />
+      </a>
+      <nav>
+        <ul>
+          <li>
+            <a href="movies.html"><i class="fa-solid fa-film"></i>Movies</a>
+          </li>
+          <li>
+            <a href="about.html"><i class="fa-solid fa-skull"></i>About</a>
+          </li>
+          <li>
+            <a href="contact.html"
+              ><i class="fa-regular fa-comment-dots"></i>Contact</a
+            >
+          </li>
+          <li>
+            <a href="login.html"
+              ><i class="fa-solid fa-user-astronaut"></i>Log in</a
+            >
+          </li>
+          <li>
+            <a href="cart.html"
+              ><i class="fa-solid fa-cart-shopping"></i>Your cart</a
+            >
+          </li>
+        </ul>
+      </nav>
     </header>
 
-<section class="form">
-
-    <form action="where/to/send/data" method="get">
+    <section class="form">
+      <form action="where/to/send/data" method="get">
         <ul>
-        <li>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="user_name">
-        </li>
-        <li>
-        <label for="mail">E-mail:</label>
-        <input type="email" id="mail" name="user_email">
-        </li>
-        <li>
-        <label for="msg">Message:</label>
-        <textarea id="msg" name="user_message"></textarea>
-        </li>
+          <li>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="user_name" />
+          </li>
+          <li>
+            <label for="mail">E-mail:</label>
+            <input type="email" id="mail" name="user_email" />
+          </li>
+          <li>
+            <label for="msg">Message:</label>
+            <textarea id="msg" name="user_message"></textarea>
+          </li>
         </ul>
-        </form>
+      </form>
 
-        <li class="button">
-            <button type="submit">Submit form</button>
-            </li>
+      <li class="button">
+        <button type="submit">Submit form</button>
+      </li>
+    </section>
 
-</section>
-
-
-</body>
+    <footer>
+      <a href="contact.html">Get in touch</a>
+      <a href="about.html">Learn more about us</a>
+    </footer>
+  </body>
 </html>

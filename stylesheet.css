@@ -1,6 +1,8 @@
 body {
   height: 100%;
   font-family: "Oswald", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .header {
@@ -11,6 +13,12 @@ body {
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  text-align: center
+}
+
+.logo a {
+    width: 500px;
+    border-radius: 16px;
 }
 
 li {
@@ -48,7 +56,9 @@ li {
   color: #0f7173;
   border: solid 3px #0f7173;
   border-radius: 7px;
-}
+} 
+
+/*gi alle knappene en ID og style dem for seg selv*/
 
 .moviez {
   display: flex;
@@ -65,7 +75,7 @@ figure {
   
 }
 
-img {
+.movieghost {
   width: 16em;
   height: 25em;
   object-fit: cover;
@@ -81,4 +91,7 @@ footer {
   height: 100px;
   width: auto;
   text-align: center;
+  margin: 0;
+  padding: 0;
+  
 }
