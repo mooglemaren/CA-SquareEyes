@@ -5,43 +5,87 @@ body {
   padding: 0;
 }
 
-.header {
-  background-color: #ada7c9;
+#header {
+  background-color: #d8d3f8;
   color: rgb(192, 91, 77);
   background-size: cover;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  text-align: center
+  text-align: center;
+}
+
+.header_small {
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+
+ #test{
+        background-color: 0f7173;
+        color: aqua;
+    }
+
+
+
+#logo_small img {
+  display: block;
+  height: 55px;
+  margin-left: 1em;
+}
+
+#menu:not(.menu_small) {
+  transform: translateY(-100%);
+}
+
+.menu_small {
+  margin: auto;
+}
+
+#menu ul {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+#menu li i {
+  margin: 0.8em;
 }
 
 .logo a {
-    width: 500px;
-    border-radius: 16px;
-}
-
-li {
-  display: inline;
-  width: 100%;
-  justify-content: space-between;
+  width: 500px;
+  border-radius: 16px;
 }
 
 #form {
   justify-content: center;
 }
 
-.mainpart {
+main h1 {
+  margin: 2em auto 0;
+  color: #0f7173;
+  width: fit-content;
+}
+
+.mainhero {
   background-image: url(./images/billy-aboulkheir-7d94sU14YXA-unsplash.jpg);
   border-radius: 7px;
   position: relative;
-  width: 80vw;
-  height: 60vh;
+  width: 1000px;
+  max-width: 90%;
+  height: 600px;
   margin: 5% auto;
   background-size: cover;
 }
 
-.mainpart .button {
+.mainhero .button {
   position: absolute;
   bottom: 3em;
   left: 50%;
@@ -56,14 +100,16 @@ li {
   color: #0f7173;
   border: solid 3px #0f7173;
   border-radius: 7px;
-} 
+}
 
 /*gi alle knappene en ID og style dem for seg selv*/
 
 .moviez {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
+  margin-bottom: calc(5% - 20px);
 }
 
 figure {
@@ -72,7 +118,15 @@ figure {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
   justify-content: space-evenly;
   border-radius: 7px;
-  
+  margin: 20px 0 0 0;
+}
+
+.moviez img {
+  height: 400px;
+  width: 225px;
+  object-fit: cover;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
 }
 
 .movieghost {
@@ -84,14 +138,61 @@ figure {
 figcaption {
   text-align: center;
   padding: 10px 20px;
+}
+
+h1.abouth1 {
+    text-align: center;
+    color: #0f7173;
+    background-color: white;
+}
+
+h2.abouth2 {
+    color: #0f7173;
+    background-color: white;
+}
+
+h1.h1products {
+    margin-bottom: 2em;
+}
+
+#h1cart {
+    margin-bottom: 2em;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .card {
+    border: 1px solid #0f7173
+    max-width: 350px;
+    margin: 10px auto;
+    text-align: center;
+    font-family: sans-serif;
   }
 
 footer {
-  background-color: #ada7c9;
+  background-color: #d8d3f8;
   height: 100px;
   width: auto;
   text-align: center;
   margin: 0;
   padding: 0;
-  
+}
+
+@media screen and (max-width: 600px) {
+  .mainhero {
+    width: 90%;
+    height: 50vw;
+  }
+  .mainhero .button {
+    top: 1em;
+    bottom: auto;
+    padding: 10px 20px;
+  }
+
 }

@@ -12,24 +12,36 @@
   <script src="https://kit.fontawesome.com/9e698d9234.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="header">
-        <a href="index.html">
-            <img
-              src="images/logo square.png"
-              id="logo"
-              alt="sick nasty logo goddamn"
-            />
-          </a>
-        <nav>
-            <ul>
-              <li><a href="movies.html"><i class="fa-solid fa-film"></i>Movies</a></li>
-              <li><a href="about.html"><i class="fa-solid fa-skull"></i>About</a></li>
-              <li><a href="contact.html"><i class="fa-regular fa-comment-dots"></i>Contact</a></li>
-              <li><a href="login.html"><i class="fa-solid fa-user-astronaut"></i>Log in</a></li>
-              <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i>Your cart</a></li>
-            </ul>
-          </nav>
-      </header>
+  <header id="header" class="header_small">
+    <a id="logo_small" href="index.html">
+      <img src="images/logo square.png" alt="sick nasty logo goddamn" />
+    </a>
+    <nav id="menu" class="menu_small">
+      <ul>
+        <li>
+          <a href="movies.html"><i class="fa-solid fa-film"></i>Movies</a>
+        </li>
+        <li>
+          <a href="about.html"><i class="fa-solid fa-skull"></i>About</a>
+        </li>
+        <li>
+          <a href="contact.html"
+            ><i class="fa-regular fa-comment-dots"></i>Contact</a
+          >
+        </li>
+        <li>
+          <a href="login.html"
+            ><i class="fa-solid fa-user-astronaut"></i>Log in</a
+          >
+        </li>
+        <li>
+          <a href="cart.html"
+            ><i class="fa-solid fa-cart-shopping"></i>Your cart</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </header>
     
     <h1>Check out</h1>
 
@@ -48,13 +60,13 @@
         <h2>Select payment option</h2>
         <h2>Select shipping option</h2>
         <label>
-            <input type="radio" name="shipping" value="express"> Express
+            <input type="radio" name="shipping" value="express"> Express shipping 5.99 1-2 days delivery
           </label>
           <br>
           <label>
-            <input type="radio" name="shipping" value="standard"> Standard
+            <input type="radio" name="shipping" value="standard"> Standard shipping 1.99 4-5 days delivery
           </label>
-          <a class="button">Confirm order</a>
+          <a class="button" href="index.html">Confirm order</a>
     </section>
 
     <footer>
