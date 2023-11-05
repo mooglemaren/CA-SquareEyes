@@ -1,2 +1,2 @@
 # CA-SquareEyes
-https://resplendent-snickerdoodle-c3717b.netlify.app/
+https://ca-square-eyes-mkj.netlify.app/ 

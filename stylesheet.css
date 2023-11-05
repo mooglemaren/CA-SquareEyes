@@ -6,6 +6,50 @@ body {
   padding: 0;
 }
 
+nav.hamburger {
+    display: none;
+    /* By default hide the navigation menu */
+}
+
+input#hamburger-menu {
+    display: none; /* Hide the checkbox */ 
+}
+
+input#hamburger-menu:checked ~ nav.hamburger {
+    display: block; 
+}
+
+label[for=hamburger-menu] { 
+  font-size: 2em;
+}
+
+nav.hamburger ul { 
+    list-style-type: none;
+    display: inline-block; 
+    padding: 0;
+    margin: 0;
+    width: 150px;
+}
+nav.hamburger li {     
+    margin-bottom: 5px;
+}
+nav.hamburger li a { 
+    text-decoration: none; 
+    color: #0f7173;; 
+    background: #ada7c9;
+    padding: 2px 5px;
+    border: 1px solid #0f7173;
+    display: block; 
+    text-align: center;
+}
+nav.hamburger li:last-child {
+   margin-bottom: 0;
+}
+nav.hamburger li a:hover {
+    color: black; 
+    background: white;  
+}
+
 #header {
   background-color: #d8d3f8;
   color: rgb(192, 91, 77);
@@ -32,13 +76,7 @@ body {
   align-items: center;
 }
 
- #test{
-        background-color: 0f7173;
-        color: aqua;
-    }
-
-
-
+ 
 #logo_small img {
   display: block;
   height: 55px;
@@ -176,11 +214,21 @@ main h1 {
   }
 
 .moviez {
-  display: flex;
+  /*display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-around;*/
+  display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
   margin-bottom: calc(5% - 20px);
+}
+
+figure {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
 }
 
 .moviez img {
@@ -239,10 +287,12 @@ h1.h1products {
 footer {
   background-color: #d8d3f8;
   height: 100px;
-  width: auto;
+  width: 100%;
   text-align: center;
   margin: 0;
   padding: 0;
+  position: fixed;
+  bottom: 0;
 }
 
 @media screen and (max-width: 600px) {
@@ -256,4 +306,8 @@ footer {
     padding: 10px 20px;
   }
 
-}
+  @media screen and (min-width: 600px) {
+    .menu-container {
+      display: block;
+    }
+  }
