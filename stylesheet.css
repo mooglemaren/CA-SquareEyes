@@ -1,5 +1,6 @@
 body {
   height: 100%;
+  background-color: #fafafa;
   font-family: "Oswald", sans-serif;
   margin: 0;
   padding: 0;
@@ -16,6 +17,15 @@ body {
   text-align: center;
 }
 
+#header a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+  }
+  
+  #header li{
+    margin-right: 25px;
+  }
 .header_small {
   width: auto;
   display: flex;
@@ -68,6 +78,63 @@ body {
   justify-content: center;
 }
 
+.form{
+    margin: 30px auto;
+    width: 400px;;
+    /background-color: tomato;/
+
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    /Ofte matcher denne paddingen or BR bra opp/
+
+}
+.form ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+/Tar vekk dottene/
+}
+form li + li{
+    margin-top: 1em;
+    /et hack for å legge på noe på alle ele i en liste. ALLE etter det ele her form li. denne gjør 
+    noe med alle ele etter det./
+}
+
+label{
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+    /uniform størrelse og alignment/
+}
+
+input,textarea{
+    font: 1em sans-serif;
+    width: 300px;
+    /Det er denne bredden som sier at tekstfeltene skal være like brede./
+    box-sizing: border-box;
+
+    border: 1px solid black;
+    /Matcher formen på borders/
+}
+
+ 
+textarea{
+    vertical-align: top;
+    /Tar skriften opp/
+    height: 5em;
+    resize: vertical;
+    /Kan gjør det større opp og ned men ikke lengre til venstre.Vertical er den du som oftes vil ha./
+}
+
+.button{
+    padding-left: 90px;
+}
+
+button{
+    margin-left: .3em;
+}
+
 main h1 {
   margin: 2em auto 0;
   color: #0f7173;
@@ -104,12 +171,31 @@ main h1 {
 
 /*gi alle knappene en ID og style dem for seg selv*/
 
+.moviez a{
+    text-decoration: none;
+  }
+
 .moviez {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
   margin-bottom: calc(5% - 20px);
+}
+
+.moviez img {
+    height: 400px;
+    width: 225px;
+    object-fit: cover;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+}
+
+.movieghost {
+    width: 16em;
+    height: 25em;
+    object-fit: cover;
+    border-radius: 7px 7px 0 0;
 }
 
 figure {
@@ -121,24 +207,13 @@ figure {
   margin: 20px 0 0 0;
 }
 
-.moviez img {
-  height: 400px;
-  width: 225px;
-  object-fit: cover;
-  border-top-right-radius: 7px;
-  border-top-left-radius: 7px;
-}
-
-.movieghost {
-  width: 16em;
-  height: 25em;
-  object-fit: cover;
-  border-radius: 7px 7px 0 0;
-}
 figcaption {
-  text-align: center;
-  padding: 10px 20px;
-}
+    text-align: center;
+    padding: 10px 20px;
+    color: #ada7c9;
+    font-size: 16px;
+    font-weight: bold;
+    }
 
 h1.abouth1 {
     text-align: center;
@@ -159,21 +234,7 @@ h1.h1products {
     margin-bottom: 2em;
 }
 
-.cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: right;
-    margin: 0 auto;
-    width: 100%;
-  }
 
-  .card {
-    border: 1px solid #0f7173
-    max-width: 350px;
-    margin: 10px auto;
-    text-align: center;
-    font-family: sans-serif;
-  }
 
 footer {
   background-color: #d8d3f8;
