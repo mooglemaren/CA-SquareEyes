@@ -1,84 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Checkout" />
     <title>Checkout</title>
     <link
-    href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Roboto&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="stylesheet.css" />
-  <script src="https://kit.fontawesome.com/9e698d9234.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <header id="header" class="header_small">
-    <a id="logo_small" href="index.html">
-      <img src="images/logo square.png" alt="sick nasty logo goddamn" />
-    </a>
-    <nav id="menu" class="menu_small">
-      <ul>
-        <li>
-          <a href="movies.html"><i class="fa-solid fa-film"></i>Movies</a>
-        </li>
-        <li>
-          <a href="about.html"><i class="fa-solid fa-skull"></i>About</a>
-        </li>
-        <li>
-          <a href="contact.html"
-            ><i class="fa-regular fa-comment-dots"></i>Contact</a
-          >
-        </li>
-        <li>
-          <a href="login.html"
-            ><i class="fa-solid fa-user-astronaut"></i>Log in</a
-          >
-        </li>
-        <li>
-          <a href="cart.html"
-            ><i class="fa-solid fa-cart-shopping"></i>Your cart</a
-          >
-        </li>
-      </ul>
-    </nav>
-  </header>
-    
-    <h1>Check out</h1>
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="stylesheet.css" />
+    <script
+      src="https://kit.fontawesome.com/9e698d9234.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+  </head>
+  <body>
+    <header id="header" class="header_small">
+      <a id="logo_small" href="index.html">
+        <img src="images/logo square.png" alt="sick nasty logo goddamn" />
+      </a>
+      <nav id="menu" class="menu_small">
+        <ul>
+          <li>
+            <a href="movies.html"><i class="fa-solid fa-film"></i>Movies</a>
+          </li>
+          <li>
+            <a href="about.html"><i class="fa-solid fa-skull"></i>About</a>
+          </li>
+          <li>
+            <a href="contact.html"
+              ><i class="fa-regular fa-comment-dots"></i>Contact</a
+            >
+          </li>
+          <li>
+            <a href="login.html"
+              ><i class="fa-solid fa-user-astronaut"></i>Log in</a
+            >
+          </li>
+          <li>
+            <a href="cart.html"
+              ><i class="fa-solid fa-cart-shopping"></i>Your cart</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-    <section class="Checkoutform">
-        <form action="where/to/send/data" method="get">
-            <ul>
-            <li>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="user_name">
-            </li>
-            <br>
-            <li>
-            <label for="shipadr">Shipping address:</label>
-            <input type="text" id="shipadr" name="shipadr">
-        </li>
+    <section id="checkoutform">
+      <h1>Check out</h1>
+      <form action="where/to/send/data" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user_name" />
+
+        <label for="shipadr">Shipping address:</label>
+        <input type="text" id="shipadr" name="shipadr" />
+
         <h2>Select payment option</h2>
         <label>
-          <input type="radio" name="payment" value="card"> Pay with credit card
+          <input type="radio" name="payment" value="card" /> Pay with credit
+          card
         </label>
-        <br>
+        <br />
         <label>
-          <input type="radio" name="payment" value="voucher"> Pay with gift voucher
+          <input type="radio" name="payment" value="voucher" /> Pay with gift
+          voucher
         </label>
         <h2>Select shipping option</h2>
         <label>
-            <input type="radio" name="shipping" value="express"> Express shipping 5.99 1-2 days delivery
-          </label>
-          <br>
-          <label>
-            <input type="radio" name="shipping" value="standard"> Standard shipping 1.99 4-5 days delivery
-          </label>
-          <a class="button" href="index.html">Confirm order</a>
+          <input type="radio" name="shipping" value="express" /> Express
+          shipping 5.99 1-2 days delivery
+        </label>
+        <br />
+        <label>
+          <input type="radio" name="shipping" value="standard" /> Standard
+          shipping 1.99 4-5 days delivery
+        </label>
+        <button class="button" type="submit">Confirm order</button>
+      </form>
     </section>
 
     <footer>
-        <a href="contact.html">Get in touch</a>
-        <a href="about.html">Learn more about us</a>
-      </footer>
-</body>
+      <a href="contact.html">Get in touch</a>
+      <a href="about.html">Learn more about us</a>
+    </footer>
+  </body>
 </html>

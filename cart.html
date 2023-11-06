@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cart" />
     <title>Cart</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Roboto&display=swap"
@@ -13,8 +14,24 @@
       src="https://kit.fontawesome.com/9e698d9234.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
   </head>
   <body>
+    <div class="menu_container">
+      <label for="hamburger-menu"> <i class="fas fa-bars"></i></label>
+      <input type="checkbox" id="hamburger-menu" />
+
+      <nav class="hamburger">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html" id="menu_active">Cart</a></li>
+          <li><a href="login.html">Account</a></li>
+          <li><a href="movies.html">Selection</a></li>
+        </ul>
+      </nav>
+    </div>
     <header id="header" class="header_small">
       <a id="logo_small" href="index.html">
         <img src="images/logo square.png" alt="sick nasty logo goddamn" />
@@ -38,7 +55,7 @@
             >
           </li>
           <li>
-            <a href="cart.html"
+            <a href="cart.html" id="menu_active"
               ><i class="fa-solid fa-cart-shopping"></i>Your cart</a
             >
           </li>
@@ -48,21 +65,21 @@
 
     <main>
       <h1 class="h1cart">Your cart</h1>
-     
-<section>
-  <div class="productcart">
-  <img src="images/Square_Eyes_Cover3.jpeg" alt="cover of movie">
-  <p><i class="fa-solid fa-dollar-sign"></i>9.99</p>
-</div>
 
-<div class="productcart">
-  <img src="images/Square_Eyes_Cover2.jpeg" alt="cover of movie">
-  <p><i class="fa-solid fa-dollar-sign"></i>9.99</p>
-</div>
+      <section id="checkout_container">
+        <div class="productcart">
+          <img src="images/Square_Eyes_Cover3.jpeg" alt="cover of movie" />
+          <p><i class="fa-solid fa-dollar-sign"></i>19.99</p>
+        </div>
 
-</section>
-
-      <a class="button" href="checkout.html">Proceed to checkout</a>
+        <div class="productcart">
+          <img src="images/Square_Eyes_Cover2.jpeg" alt="cover of movie" />
+          <p><i class="fa-solid fa-dollar-sign"></i>19.99</p>
+        </div>
+        <a id="checkbutton" class="button" href="checkout.html"
+          >Proceed to checkout</a
+        >
+      </section>
     </main>
 
     <footer>

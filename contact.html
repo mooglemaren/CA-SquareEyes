@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact us" />
     <title>Contact Us</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Roboto&display=swap"
@@ -13,8 +14,24 @@
       src="https://kit.fontawesome.com/9e698d9234.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
   </head>
   <body>
+    <div class="menu_container">
+      <label for="hamburger-menu"> <i class="fas fa-bars"></i></label>
+      <input type="checkbox" id="hamburger-menu" />
+
+      <nav class="hamburger">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" id="menu_active">Contact</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="login.html">Account</a></li>
+          <li><a href="movies.html">Selection</a></li>
+        </ul>
+      </nav>
+    </div>
     <header id="header" class="header_small">
       <a id="logo_small" href="index.html">
         <img src="images/logo square.png" alt="sick nasty logo goddamn" />
@@ -28,7 +45,7 @@
             <a href="about.html"><i class="fa-solid fa-skull"></i>About</a>
           </li>
           <li>
-            <a href="contact.html"
+            <a id="menu_active" href="contact.html"
               ><i class="fa-regular fa-comment-dots"></i>Contact</a
             >
           </li>
@@ -45,9 +62,9 @@
         </ul>
       </nav>
     </header>
-<h1>Do you have a question for us? Let us know down below!</h1>
+    <h1>Do you have a question for us? Let us know down below!</h1>
     <section class="form">
-      <form action="where/to/send/data" method="get">
+      <form action="index.html" method="post">
         <ul>
           <li>
             <label for="name">Name:</label>
@@ -62,9 +79,8 @@
             <textarea id="msg" name="user_message"></textarea>
           </li>
         </ul>
+        <button id="sendbutton" class="button" type="submit">Send</button>
       </form>
-
-      <a class="button" href="index.html">Send a message</a>
     </section>
 
     <footer>

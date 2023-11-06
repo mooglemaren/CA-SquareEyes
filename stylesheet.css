@@ -7,47 +7,47 @@ body {
 }
 
 nav.hamburger {
-    display: none;
-    /* By default hide the navigation menu */
+  display: none;
 }
 
 input#hamburger-menu {
-    display: none; /* Hide the checkbox */ 
+  display: none;
+  text-align: left;
 }
 
 input#hamburger-menu:checked ~ nav.hamburger {
-    display: block; 
+  display: block;
 }
 
-label[for=hamburger-menu] { 
+.menu_container > label {
   font-size: 2em;
 }
 
-nav.hamburger ul { 
-    list-style-type: none;
-    display: inline-block; 
-    padding: 0;
-    margin: 0;
-    width: 150px;
+nav.hamburger ul {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  width: 150px;
 }
-nav.hamburger li {     
-    margin-bottom: 5px;
+nav.hamburger li {
+  margin-bottom: 5px;
 }
-nav.hamburger li a { 
-    text-decoration: none; 
-    color: #0f7173;; 
-    background: #ada7c9;
-    padding: 2px 5px;
-    border: 1px solid #0f7173;
-    display: block; 
-    text-align: center;
+nav.hamburger li a {
+  text-decoration: none;
+  color: #0f7173;
+  background: #ada7c9;
+  padding: 2px 5px;
+  border: 1px solid #0f7173;
+  display: block;
+  text-align: center;
 }
 nav.hamburger li:last-child {
-   margin-bottom: 0;
+  margin-bottom: 0;
 }
 nav.hamburger li a:hover {
-    color: black; 
-    background: white;  
+  color: black;
+  background: white;
 }
 
 #header {
@@ -61,22 +61,21 @@ nav.hamburger li a:hover {
   text-align: center;
 }
 
-#header a{
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-  }
-  
-  #header li{
-    margin-right: 25px;
-  }
+#header a:not(#menu_active) {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+#header li {
+  margin-right: 25px;
+}
 .header_small {
   width: auto;
   display: flex;
   align-items: center;
 }
 
- 
 #logo_small img {
   display: block;
   height: 55px;
@@ -84,7 +83,7 @@ nav.hamburger li a:hover {
 }
 
 #menu:not(.menu_small) {
-  transform: translateY(-100%);
+  transform: translateY(-40%);
 }
 
 .menu_small {
@@ -101,8 +100,6 @@ nav.hamburger li a:hover {
   margin: 0;
 }
 
-
-
 #menu li i {
   margin: 0.8em;
 }
@@ -116,61 +113,50 @@ nav.hamburger li a:hover {
   justify-content: center;
 }
 
-.form{
-    margin: 30px auto;
-    width: 400px;;
-    /background-color: tomato;/
-
-    padding: 1em;
-    border: 1px solid #CCC;
-    border-radius: 1em;
-    /Ofte matcher denne paddingen or BR bra opp/
-
-}
-.form ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-/Tar vekk dottene/
-}
-form li + li{
-    margin-top: 1em;
-    /et hack for å legge på noe på alle ele i en liste. ALLE etter det ele her form li. denne gjør 
-    noe med alle ele etter det./
+.form {
+  margin: 30px auto;
+  width: 400px;
+  padding: 1em;
+  border: 1px solid #0f7173;
+  border-radius: 1em;
 }
 
-label{
-    display: inline-block;
-    width: 90px;
-    text-align: right;
-    /uniform størrelse og alignment/
+.form ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-input,textarea{
-    font: 1em sans-serif;
-    width: 300px;
-    /Det er denne bredden som sier at tekstfeltene skal være like brede./
-    box-sizing: border-box;
-
-    border: 1px solid black;
-    /Matcher formen på borders/
+form li + li {
+  margin-top: 1em;
 }
 
- 
-textarea{
-    vertical-align: top;
-    /Tar skriften opp/
-    height: 5em;
-    resize: vertical;
-    /Kan gjør det større opp og ned men ikke lengre til venstre.Vertical er den du som oftes vil ha./
+.form label {
+  display: inline-block;
+  width: 90px;
+  text-align: right;
 }
 
-.button{
-    padding-left: 90px;
+input,
+textarea {
+  font: 1em sans-serif;
+  width: 300px;
+  box-sizing: border-box;
+  border: 1px solid #0f7173;
 }
 
-button{
-    margin-left: .3em;
+textarea {
+  vertical-align: top;
+  height: 5em;
+  resize: vertical;
+}
+
+.button {
+  padding-left: 90px;
+}
+
+button {
+  margin-left: 0.3em;
 }
 
 main h1 {
@@ -207,43 +193,37 @@ main h1 {
   border-radius: 7px;
 }
 
-/*gi alle knappene en ID og style dem for seg selv*/
+.movies a {
+  text-decoration: none;
+}
 
-.moviez a{
-    text-decoration: none;
-  }
-
-.moviez {
-  /*display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;*/
+.movies {
   display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
   margin-bottom: calc(5% - 20px);
 }
 
-figure {
-    background-color: #f2f2f2;
-    padding: 20px;
-    text-align: center;
-    border: 1px solid #ccc;
-}
-
-.moviez img {
-    height: 400px;
-    width: 225px;
-    object-fit: cover;
-    border-top-right-radius: 7px;
-    border-top-left-radius: 7px;
+.movies img {
+  height: 400px;
+  width: 225px;
+  object-fit: cover;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
 }
 
 .movieghost {
-    width: 16em;
-    height: 25em;
-    object-fit: cover;
-    border-radius: 7px 7px 0 0;
+  width: 16em;
+  height: 25em;
+  object-fit: cover;
+  border-radius: 7px 7px 0 0;
+}
+
+figure {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
 }
 
 figure {
@@ -256,37 +236,115 @@ figure {
 }
 
 figcaption {
-    text-align: center;
-    padding: 10px 20px;
-    color: #ada7c9;
-    font-size: 16px;
-    font-weight: bold;
-    }
+  text-align: center;
+  padding: 10px 20px;
+  color: #ada7c9;
+  font-size: 16px;
+  font-weight: bold;
+}
 
 h1.abouth1 {
-    text-align: center;
-    color: #0f7173;
-    background-color: white;
+  text-align: center;
+  color: #0f7173;
+  background-color: white;
 }
 
 h2.abouth2 {
-    color: #0f7173;
-    background-color: white;
+  color: #0f7173;
+  background-color: white;
 }
 
 h1.h1products {
-    margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 #h1cart {
-    margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 
+#proditempic {
+  height: 350px;
+  width: 250px;
+  border-radius: 7px;
+  left: 5em;
+}
 
+#productitem {
+  display: flex;
+  flex-direction: column;
+}
+
+#productitem_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#productitem_info > * {
+  margin: 2em;
+}
+
+#proditem_description {
+  width: 23%;
+  min-width: 200px;
+}
+
+#loginbutton,
+#sendbutton {
+  margin: 1em auto auto;
+  width: fit-content;
+  display: block;
+}
+
+#cartbutton {
+  margin: auto;
+}
+
+#checkout_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#checkbutton {
+  margin-bottom: 4em;
+}
+
+.productcart img {
+  width: 200px;
+}
+
+.menu_container {
+  display: none;
+}
+
+#menu_active {
+  text-decoration: underline;
+  color: #e4644f;
+  background-color: #d8d3f8;
+  font-size: 20px;
+}
+
+#checkoutform {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
+
+#checkoutform form {
+  display: flex;
+  flex-direction: column;
+}
+
+#checkoutform input[type="radio"] {
+  width: fit-content;
+}
 
 footer {
   background-color: #d8d3f8;
-  height: 100px;
+  height: 25px;
   width: 100%;
   text-align: center;
   margin: 0;
@@ -305,9 +363,23 @@ footer {
     bottom: auto;
     padding: 10px 20px;
   }
-
-  @media screen and (min-width: 600px) {
-    .menu-container {
-      display: block;
-    }
+  .menu_container {
+    display: block;
+    margin: 1em;
   }
+
+  #header {
+    display: none;
+  }
+
+  .movies {
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+  }
+
+  main h1 {
+    text-align: center;
+    margin: 1em;
+  }
+}

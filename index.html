@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Homepage Square Eyes" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,24 +17,25 @@
     ></script>
 
     <title>Home</title>
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
   </head>
   <body>
-    <div class="menu-container">
-    <label for="hamburger-menu">
-      <i class="fas fa-bars"></i> Menu
-    </label>
-    <input type="checkbox" id="hamburger-menu">
+    <div class="menu_container">
+      <label for="hamburger-menu"> <i class="fas fa-bars"></i></label>
+      <input type="checkbox" id="hamburger-menu" />
 
-    <nav class="hamburger">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+      <nav class="hamburger">
+        <ul>
+          <li><a href="index.html" id="menu_active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="login.html">Account</a></li>
+          <li><a href="movies.html">Selection</a></li>
+        </ul>
+      </nav>
+    </div>
 
-    
     <header id="header">
       <a id="logo" href="index.html">
         <img src="images/logo square.png" alt="square eyes large logo" />
@@ -70,10 +72,9 @@
       <section class="mainhero">
         <a class="button" href="movies.html">Start watching</a>
       </section>
-
     </main>
 
-    <section class="moviez">
+    <section class="movies">
       <a href="product.html">
         <figure>
           <img

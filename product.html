@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="description" content="Product" />
+    <title>Product</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Roboto&display=swap"
       rel="stylesheet"
@@ -13,6 +14,7 @@
       src="https://kit.fontawesome.com/9e698d9234.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
   </head>
   <body>
     <header id="header" class="header_small">
@@ -47,11 +49,31 @@
     </header>
 
     <main>
-      <h1>Product name</h1>
-      <p>Movie description goes here</p>
-      <p>Pris</p>
-      <p>Varighet</p>
-      <p>Add to cart</p>
+      <div id="productitem">
+        <h1>Product name</h1>
+        <div id="productitem_info">
+          <img
+            id="proditempic"
+            src="images/Square_Eyes_Cover4.jpeg"
+            alt="moviecover"
+          />
+          <p id="proditem_description">
+            'Scream' is a modern classic that redefined the horror genre,
+            blending suspense, wit, and a chilling mystery. As the ghost-faced
+            killer terrorizes a small town, you'll be on the edge of your seat,
+            trying to unravel the mystery and guess who's behind the mask. With
+            a smart script, iconic characters, and a perfect balance of scares
+            and humor, 'Scream' is a must-watch for anyone seeking a
+            spine-tingling cinematic experience
+          </p>
+          <div id="productitem_metadata">
+            <p><i class="fa-solid fa-dollar-sign"></i>Price: $19.99</p>
+            <p><i class="fa-solid fa-clock"></i>Duration: 2 hours</p>
+          </div>
+        </div>
+        <br />
+        <a id="cartbutton" class="button" href="cart.html">Add to cart</a>
+      </div>
     </main>
 
     <footer>
