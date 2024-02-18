@@ -198,10 +198,11 @@ main h1 {
 }
 
 .movies {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-  margin-bottom: calc(5% - 20px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 3em;
 }
 
 .movies img {
