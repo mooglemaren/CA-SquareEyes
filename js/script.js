@@ -42,6 +42,19 @@ function addMovieToFrontpage(movie) {
   movieSection.appendChild(link);
 }
 
+
+async function myFunction(){
+    console.log("Beep Boop");
+const productsResponse = await getAllProducts();
+  if (!productsResponse) return;
+  productsResponse.forEach(movie =>products.push(movie));
+  const frontPageProducts = products;
+  console.log(frontPageProducts);
+  frontPageProducts.forEach(movie =>{
+    addMovieToFrontpage(movie)
+  })
+}
+
 window.addEventListener("DOMContentLoaded", function () {
   initMainPage();
 });
