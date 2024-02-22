@@ -26,7 +26,12 @@ async function populateMovieDisplays() {
   });
   products.forEach((movie) => {
     addMovieToElement(movie, "full_movieslist");
+    addMovieToCart(movie);
   });
+}
+
+ function addMovieToCart(movie){
+  // ta id + bruke getFromLocalStorage, hvis return , legge til i html på cart, ny movietocart funksjon uten cartbutt,style annerledes
 }
 
 function addMovieToElement(movie, elementID) {
@@ -39,6 +44,7 @@ function addMovieToElement(movie, elementID) {
   const cartbutt = document.createElement("button");
   const cartimg = document.createElement("img");
   cartbutt.classList.add("cart_button");
+  cartbutt.onclick = (e) => toggleCartChange(e, movie.id);
   cartimg.src = "./images/cart.svg";
   poster.classList.add("movies_posters");
   poster.src = movie.image?.url;
@@ -49,13 +55,32 @@ function addMovieToElement(movie, elementID) {
   figure.appendChild(link);
   figure.appendChild(cartbutt);
   link.appendChild(poster);
-  link.appendChild(figcaption);  
+  link.appendChild(figcaption);
   movieSection.appendChild(figure);
 }
 
 function toggleCartChange(event, movieID) {
-  
+  const active = event.currentTarget.classList.contains("active");
+  if (active) {
+    event.currentTarget.classList.remove("active");
+  } else {
+    event.currentTarget.classList.add("active");
+    saveToLocalStorage(movieID);
+  }
 }
+
+function saveToLocalStorage(movieID) {
+  try {
+    localStorage.setItem(movieID, movieID);
+  } catch (e) {}
+}
+
+function getFromLocalStorage(movieID) {
+  try {
+    localStorage.getItem(movieID);
+  } catch (e) {}
+}
+
 
 window.addEventListener("DOMContentLoaded", function () {
   populateMovieDisplays();
