@@ -1,4 +1,4 @@
-const products=[]
+const products = [];
 
 async function getAllProducts() {
   try {
@@ -15,60 +15,48 @@ async function getAllProducts() {
   }
 }
 
-async function initMainPage() {
+async function populateMovieDisplays() {
   const productsResponse = await getAllProducts();
   if (!productsResponse) return;
-  productsResponse.forEach(movie =>products.push(movie));
+  productsResponse.forEach((movie) => products.push(movie));
   const frontPageProducts = products.slice(0, 3);
   console.log(frontPageProducts);
-  frontPageProducts.forEach(movie =>{
-    addMovieToFrontpage(movie)
-  })
+  frontPageProducts.forEach((movie) => {
+    addMovieToElement(movie, "frontpage_movies");
+  });
+  products.forEach((movie) => {
+    addMovieToElement(movie, "full_movieslist");
+  });
 }
 
-function addMovieToFrontpage(movie) {
-  const movieSection = document.getElementById("frontpage_movies");
+function addMovieToElement(movie, elementID) {
+  const movieSection = document.getElementById(elementID);
+  if (!movieSection) return;
   const link = document.createElement("a");
   const figure = document.createElement("figure");
   const poster = document.createElement("img");
   const figcaption = document.createElement("figcaption");
+  const cartbutt = document.createElement("button");
+  const cartimg = document.createElement("img");
+  cartbutt.classList.add("cart_button");
+  cartimg.src = "./images/cart.svg";
+  poster.classList.add("movies_posters");
   poster.src = movie.image?.url;
   poster.alt = movie.image?.alt;
   figcaption.innerHTML = "View now!";
   link.href = "/product.html";
-  figure.appendChild(poster);
-  figure.appendChild(figcaption);
-  link.appendChild(figure);
-  movieSection.appendChild(link);
+  cartbutt.appendChild(cartimg);
+  figure.appendChild(link);
+  figure.appendChild(cartbutt);
+  link.appendChild(poster);
+  link.appendChild(figcaption);  
+  movieSection.appendChild(figure);
 }
 
-/*function displayAllMovies(movie) {
-    const movieSection = document.getElementById("full_movieslist");
-  const link = document.createElement("a");
-  const figure = document.createElement("figure");
-  const poster = document.createElement("img");
-  const figcaption = document.createElement("figcaption");
-  poster.src = movie.image?.url;
-  poster.alt = movie.image?.alt;
-  figcaption.innerHTML = "View now!";
-  link.href = "/product.html";
-  figure.appendChild(poster);
-  figure.appendChild(figcaption);
-  link.appendChild(figure);
-  movieSection.appendChild(link);
+function toggleCartChange(event, movieID) {
+  
 }
-
-async function initDisplayAll() {
-    const productsResponse = await getAllProducts();
-    if (!productsResponse) return;
-    productsResponse.forEach(movie =>products.push(movie));
-    const full_movieslist = products;
-    console.log(full_movieslist);
-    full_movieslist.forEach(movie =>{
-      addMovieToDisplaypage(movie)
-    })
-  }*/
 
 window.addEventListener("DOMContentLoaded", function () {
-  initMainPage();
+  populateMovieDisplays();
 });

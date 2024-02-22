@@ -205,7 +205,7 @@ main h1 {
   margin-bottom: 3em;
 }
 
-.movies img {
+.movies_posters {
   height: 400px;
   width: 225px;
   object-fit: cover;
@@ -221,14 +221,11 @@ main h1 {
 }
 
 figure {
-  background-color: #f2f2f2;
-  padding: 20px;
+  position: relative;
+  background-color: #0f7173;
   text-align: center;
   border: 1px solid #ccc;
-}
-
-figure {
-  background-color: #0f7173;
+  padding: 20px;
   color: #ada7c9;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
   justify-content: space-evenly;
@@ -261,6 +258,17 @@ h1.h1products {
 
 #h1cart {
   margin-bottom: 2em;
+}
+
+.cart_button {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: fit-content;
+  padding: 0.1em;
+  border-radius: 7px;
+  background: #ffffff;
+  box-shadow: inset 5px 5px 14px #d6d6d6, inset -5px -5px 14px #ffffff;
 }
 
 #proditempic {
