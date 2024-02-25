@@ -1,5 +1,8 @@
 const products = [];
+const genres = [];
+const selectedGenres = [];
 
+// Henter alle filmer og returnerer en liste av dem
 async function getAllProducts() {
   try {
     const api = `https://v2.api.noroff.dev/square-eyes`;
@@ -18,48 +21,48 @@ async function getAllProducts() {
 async function populateMovieDisplays() {
   const productsResponse = await getAllProducts();
   if (!productsResponse) return;
-  productsResponse.forEach((movie) => products.push(movie));
-  const frontPageProducts = products.slice(0, 3);
-  frontPageProducts.forEach((movie) => {
-      addMovieToElement(movie, "frontpage_movies");
+  productsResponse.forEach((movie) => {
+    //Hvis ikke i "genres", legg til i "genres"
+    products.push(movie);
+    if (!genres.includes(movie.genre)) genres.push(movie.genre);
   });
-  products.forEach((movie) => {
-      addMovieToElement(movie, "full_movieslist");
-      addMovieToCart(movie.id); 
-  });
-}
-
-/* OG funksjonen! async function populateMovieDisplays() {
-  const productsResponse = await getAllProducts();
-  if (!productsResponse) return;
-  productsResponse.forEach((movie) => products.push(movie));
   const frontPageProducts = products.slice(0, 3);
-  console.log(frontPageProducts);
   frontPageProducts.forEach((movie) => {
     addMovieToElement(movie, "frontpage_movies");
   });
   products.forEach((movie) => {
     addMovieToElement(movie, "full_movieslist");
-    addMovieToCart(movie);
+    const storedID = getFromLocalStorage(movie.id);
+    if (storedID) addMovieToCart(movie.id);
+  });
+  addCheckBoxes();
+}
+
+function addCheckBoxes() {
+  const checkboxes_container = document.getElementById("checkboxes_container");
+  if (!checkboxes_container) return;
+  //Lager og legger til checkboxes
+  genres.forEach((genre) => {
+    const genreBox = document.createElement("div");
+    const genreLabel = document.createElement("label");
+    const genreInput = document.createElement("input");
+
+    genreBox.classList.add("genre_box");
+    genreLabel.htmlFor = "genre_" + genre;
+    genreLabel.innerHTML = genre;
+    genreInput.type = "checkbox";
+    genreInput.id = "genre_" + genre;
+
+    genreBox.appendChild(genreInput);
+    genreBox.appendChild(genreLabel);
+    checkboxes_container.appendChild(genreBox);
   });
 }
 
-
-//tror jeg må parse her for å få ut tittel, pris og bilde?? eller conste de ut
-function addMovieToCart(movie) {
-  const checkout_container = document.getElementById("checkout_container");
-  checkout_container.innerHTML = "";
-  for (let i = 0; i < localStorage.length; i++) {
-    const movieID = localStorage.key(i);
-    const movie = localStorage.getItem(movieID);
-    const movieElement = document.createElement("div");
-    movieElement.textContent = movie;
-    checkout_container.appendChild(movieElement);
-  }
-}*/
-
+// lager og legger til på elementene her
 function addMovieToCart(movieID) {
   const checkout_container = document.getElementById("checkout_container");
+  if (!checkout_container) return;
   const movie = products.find((item) => item.id === movieID);
   if (!movie) return;
   const movieElement = document.createElement("div");
@@ -82,8 +85,8 @@ function addMovieToCart(movieID) {
 
   checkout_container.appendChild(movieElement);
 }
-// ta id + bruke getFromLocalStorage, hvis return , legge til i html på cart, ny movietocart funksjon uten cartbutt,style annerledes
 
+//denne funksjonen legger filmer til på et gitt element når siden lastes
 function addMovieToElement(movie, elementID) {
   const movieSection = document.getElementById(elementID);
   if (!movieSection) return;
@@ -93,7 +96,11 @@ function addMovieToElement(movie, elementID) {
   const figcaption = document.createElement("figcaption");
   const cartbutt = document.createElement("button");
   const cartimg = document.createElement("img");
+
   cartbutt.classList.add("cart_button");
+  const storedID = getFromLocalStorage(movie.id);
+  if (storedID) cartbutt.classList.add("active");
+
   cartbutt.onclick = (e) => toggleCartChange(e, movie.id);
   cartimg.src = "./images/cart.svg";
   poster.classList.add("movies_posters");
@@ -101,6 +108,7 @@ function addMovieToElement(movie, elementID) {
   poster.alt = movie.image?.alt;
   figcaption.innerHTML = "View now!";
   link.href = "/product.html";
+
   cartbutt.appendChild(cartimg);
   figure.appendChild(link);
   figure.appendChild(cartbutt);
@@ -113,6 +121,7 @@ function toggleCartChange(event, movieID) {
   const active = event.currentTarget.classList.contains("active");
   if (active) {
     event.currentTarget.classList.remove("active");
+    removeFromLocalStorage(movieID);
   } else {
     event.currentTarget.classList.add("active");
     saveToLocalStorage(movieID);
@@ -125,9 +134,15 @@ function saveToLocalStorage(movieID) {
   } catch (e) {}
 }
 
+function removeFromLocalStorage(movieID) {
+  try {
+    localStorage.removeItem(movieID);
+  } catch (e) {}
+}
+
 function getFromLocalStorage(movieID) {
   try {
-    localStorage.getItem(movieID);
+    return localStorage.getItem(movieID);
   } catch (e) {}
 }
 
