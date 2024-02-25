@@ -53,9 +53,47 @@ function addCheckBoxes() {
     genreInput.type = "checkbox";
     genreInput.id = "genre_" + genre;
 
+    //skal lytte etter endring i checked
+    genreInput.addEventListener("change", () => handleGenreChange(genre));
+
     genreBox.appendChild(genreInput);
     genreBox.appendChild(genreLabel);
     checkboxes_container.appendChild(genreBox);
+  });
+}
+
+//sjekk at følgende også fungerer
+function handleGenreChange(genre) {
+  const isChecked = document.getElementById("genre_" + genre).checked;
+
+  if (isChecked) {
+    // legg til i selectedGenres arrayet hvis checked
+    selectedGenres.push(genre);
+  } else {
+    // fjerne genre fra selectedGenres arrayet ihvis ikke checked/huket av
+    const index = selectedGenres.indexOf(genre);
+    if (index !== -1) {
+      selectedGenres.splice(index, 1);
+    }
+  }
+  updateMovieDisplays();
+}
+
+
+function updateMovieDisplays() {
+  ///skal tømme/klargjøre full_movieslist container
+  const movieSection = document.getElementById("full_movieslist");
+  if (movieSection) {
+    movieSection.innerHTML = "";
+  }
+
+ // filtrere og vise basert på checked
+  const filteredMovies = products.filter((movie) =>
+    selectedGenres.length === 0 ? true : selectedGenres.includes(movie.genre)
+  );
+
+  filteredMovies.forEach((movie) => {
+    addMovieToElement(movie, "full_movieslist");
   });
 }
 
@@ -148,4 +186,5 @@ function getFromLocalStorage(movieID) {
 
 window.addEventListener("DOMContentLoaded", function () {
   populateMovieDisplays();
+  updateMovieDisplays();
 });
