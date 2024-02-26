@@ -34,9 +34,44 @@ async function populateMovieDisplays() {
     addMovieToElement(movie, "full_movieslist");
     const storedID = getFromLocalStorage(movie.id);
     if (storedID) addMovieToCart(movie.id);
+    //console.log(movie.description);
+
   });
   addCheckBoxes();
-}
+  }
+
+async function populateSingleProduct() {
+  const productsResponse = await getAllProducts();
+  if (!productsResponse) return;
+
+   products.forEach((movie) => {
+    //console.log(movie.description);
+    const Descri = movie
+    console.log(Descri);
+    
+    document.getElementById("productitem").innerHTML=`
+    <h1>${Descri.title}</h1>
+        <div id="productitem_info">
+          <img
+            src="${Descri.image.url}"
+            alt="${Descri.image.alt}"
+          />
+          <p id="proditem_description" >
+          ${Descri.description}
+          </p>
+          <div id="productitem_metadata">
+            <p></i>Price: $ ${movie.price}</p>
+            
+        </div>
+        <br />
+        <a id="cartbutton" class="button" href="cart.html">Add to cart</a>
+      </div>
+    `;
+    
+  ;
+   })}
+
+
 
 function addCheckBoxes() {
   const checkboxes_container = document.getElementById("checkboxes_container");
@@ -184,7 +219,11 @@ function getFromLocalStorage(movieID) {
   } catch (e) {}
 }
 
+
+
+
 window.addEventListener("DOMContentLoaded", function () {
   populateMovieDisplays();
   updateMovieDisplays();
+  populateSingleProduct()
 });

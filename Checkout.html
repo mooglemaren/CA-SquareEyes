@@ -14,7 +14,7 @@
       src="https://kit.fontawesome.com/9e698d9234.js"
       crossorigin="anonymous"
     ></script>
-    <script src="js/script.js"></script>
+        <script src="js/checkout.js" defer></script>
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
   </head>
   <body>
@@ -51,7 +51,7 @@
 
     <section id="checkoutform">
       <h1>Check out</h1>
-      <form action="where/to/send/data" method="post">
+      <form action="Checkout.html">
         <label for="name">Name:</label>
         <input type="text" id="name" name="user_name" />
 
@@ -78,7 +78,7 @@
           <input type="radio" name="shipping" value="standard" /> Standard
           shipping 1.99 4-5 days delivery
         </label>
-        <button class="button" type="submit">Confirm order</button>
+        <button id="orderdone_button" class="button">Confirm order</button>
       </form>
     </section>
 
