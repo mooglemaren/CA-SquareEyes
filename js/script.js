@@ -101,7 +101,7 @@ function addCheckBoxes() {
   });
 }
 
-//sjekk at følgende også fungerer
+//sjekker om checkbox er checked
 function handleGenreChange(genre) {
   const isChecked = document.getElementById("genre_" + genre).checked;
 
