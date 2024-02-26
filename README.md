@@ -1,2 +1,2 @@
 # CA-SquareEyes
-https://ca-square-eyes-mkj.netlify.app/ 
+https://mkj-js-square-eyes.netlify.app/

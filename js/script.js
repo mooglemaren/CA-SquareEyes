@@ -1,16 +1,17 @@
 const products = [];
 const genres = [];
 const selectedGenres = [];
+let totalSum = 0;
 
 // Henter alle filmer og returnerer en liste av dem
 async function getAllProducts() {
   try {
     const api = `https://v2.api.noroff.dev/square-eyes`;
     const response = await fetch(api);
-    console.log(api);
+    //console.log(api);
     if (!response.ok) throw new Error(`HTTP error! ${response.status}`);
     const obj = await response.json();
-    console.log(obj);
+    //console.log(obj);
     return obj.data;
   } catch (error) {
     console.error(error.message);
@@ -49,7 +50,11 @@ async function populateSingleProduct() {
     const Descri = movie
     console.log(Descri);
     
-    document.getElementById("productitem").innerHTML=`
+    const itemvar = document.getElementById("productitem");
+    if (!itemvar) return;
+    itemvar.innerHTML=`
+
+    
     <h1>${Descri.title}</h1>
         <div id="productitem_info">
           <img
@@ -68,7 +73,6 @@ async function populateSingleProduct() {
       </div>
     `;
     
-  ;
    })}
 
 
@@ -174,7 +178,7 @@ function addMovieToElement(movie, elementID) {
   const storedID = getFromLocalStorage(movie.id);
   if (storedID) cartbutt.classList.add("active");
 
-  cartbutt.onclick = (e) => toggleCartChange(e, movie.id);
+  cartbutt.onclick = (e) => toggleCartChange(e, movie);
   cartimg.src = "./images/cart.svg";
   poster.classList.add("movies_posters");
   poster.src = movie.image?.url;
@@ -190,20 +194,25 @@ function addMovieToElement(movie, elementID) {
   movieSection.appendChild(figure);
 }
 
-function toggleCartChange(event, movieID) {
+function toggleCartChange(event, movie) {
   const active = event.currentTarget.classList.contains("active");
   if (active) {
     event.currentTarget.classList.remove("active");
-    removeFromLocalStorage(movieID);
+    removeFromLocalStorage(movie.id);
+    totalSum -= parseInt(movie.price);
   } else {
     event.currentTarget.classList.add("active");
-    saveToLocalStorage(movieID);
+    saveToLocalStorage(movie);
+    totalSum += parseFloat(movie.price)
   }
+  try {
+    localStorage.setItem("totalsum", totalSum);
+  } catch (e) {}
 }
 
-function saveToLocalStorage(movieID) {
+function saveToLocalStorage(movie) {
   try {
-    localStorage.setItem(movieID, movieID);
+    localStorage.setItem(movie.id, movie.price);
   } catch (e) {}
 }
 
@@ -218,8 +227,6 @@ function getFromLocalStorage(movieID) {
     return localStorage.getItem(movieID);
   } catch (e) {}
 }
-
-
 
 
 window.addEventListener("DOMContentLoaded", function () {
