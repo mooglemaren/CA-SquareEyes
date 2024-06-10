@@ -1,4 +1,4 @@
-https://ca-square-eyes-mkj.netlify.app/ 
+[https://ca-square-eyes-mkj.netlify.app/ ](https://mkj-js-square-eyes.netlify.app/)
 
 # CA-SquareEyes
 
